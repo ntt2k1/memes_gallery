@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Loading from '../Loading/loading';
 import ColumnItems from './ColumnItems/columnItems';
+import { FaAngleDoubleDown } from 'react-icons/fa';
+import { IoClose } from 'react-icons/io5';
 
 const ListItem = () => {
   const [originData, setOriginData] = useState();
@@ -66,14 +68,17 @@ const ListItem = () => {
       </div>
       <div className="bg-slate-400 w-[70px] h-[70px] rounded-full mx-auto my-12 animate-bounce relative">
         {end ? (
-          <i
-            style={{ fontSize: '48px', color: '#C70039' }}
-            className="fas fa-ban left-[12px] top-[11px] absolute cursor-not-allowed"
+          <IoClose
+            size={50}
+            color="#C70039"
+            className="absolute left-[9px] top-[10px] cursor-not-allowed"
+            onClick={handleMore}
           />
         ) : (
-          <i
-            style={{ fontSize: '48px', color: '#3EF773' }}
-            className="fas fa-angle-double-down left-[20px] top-3 absolute cursor-pointer"
+          <FaAngleDoubleDown
+            size={50}
+            color="#3EF773"
+            className="absolute left-[9px] top-[10px] cursor-pointer"
             onClick={handleMore}
           />
         )}

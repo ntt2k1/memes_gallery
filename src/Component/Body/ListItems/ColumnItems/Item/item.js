@@ -16,7 +16,7 @@ const Item = ({ item }) => {
       }`}
     >
       <img
-        className="w-full rounded-3xl"
+        className="w-full rounded-3xl border-2"
         src={item.url}
         alt={item.name}
         loading="lazy"
